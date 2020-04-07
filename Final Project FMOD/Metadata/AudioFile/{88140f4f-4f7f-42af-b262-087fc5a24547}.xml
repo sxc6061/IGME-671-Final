@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{4b8aa08d-25e8-4d38-91b5-220caa0d65b9}">
+	<object class="AudioFile" id="{88140f4f-4f7f-42af-b262-087fc5a24547}">
 		<property name="assetPath">
-			<value>Button Hover.wav</value>
+			<value>Game over.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>2.5422448979591836</value>
+			<value>1.2297732426303856</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3ee9eba8-17be-40cd-afb4-6d8f76c5d966}</destination>
