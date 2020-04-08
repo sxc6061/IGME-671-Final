@@ -5,7 +5,7 @@
 			<value>Dialog</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f051ca80-fb8e-4138-8c2e-fc76bcc06beb}</destination>
@@ -92,12 +92,19 @@
 	</object>
 	<object class="MixerBusPanner" id="{7b8dfa27-fe7a-46ee-a799-bbd9cad25305}" />
 	<object class="MultiSound" id="{2adb8318-8881-4014-bcdc-508814b8204e}">
+		<property name="isAsync">
+			<value>true</value>
+		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
+		<relationship name="sounds">
+			<destination>{4b928bc6-6213-4137-b36d-77aa8e8e289d}</destination>
+			<destination>{4337a7a1-5243-4ace-ab80-798d93716929}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{64045c13-047b-4f64-a3e0-59278f482541}">
 		<property name="name">
@@ -134,6 +141,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{6964cbb7-239d-4407-91e0-471b1489a48a}" />
 	<object class="MixerBusFader" id="{dbe8aa75-9e55-4323-8f5f-1672d7268ea7}" />
+	<object class="SingleSound" id="{4b928bc6-6213-4137-b36d-77aa8e8e289d}">
+		<relationship name="audioFile">
+			<destination>{a12d3a85-23c3-4330-9f4f-e0e951c60e52}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{4337a7a1-5243-4ace-ab80-798d93716929}">
+		<relationship name="audioFile">
+			<destination>{4a7d27de-53a3-4cb3-a9e2-cde84d30b564}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{fdb330f2-bc37-4bc5-b3f2-86d38bebf065}">
 		<relationship name="effects">
 			<destination>{22b6fb10-97f3-497b-9e5e-065f19c8a99b}</destination>

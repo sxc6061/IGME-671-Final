@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{71142382-749b-42dd-bdfb-dbda40db3f4b}">
+	<object class="AudioFile" id="{1cab1370-9d91-4e38-a15f-e287b2fb1135}">
 		<property name="assetPath">
-			<value>Robot beep boop.wav</value>
+			<value>Button pressed.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.54480725623582771</value>
+			<value>0.10154195011337869</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3ee9eba8-17be-40cd-afb4-6d8f76c5d966}</destination>

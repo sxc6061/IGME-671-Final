@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{0f56f345-b4be-4046-8804-53e4a0aa486e}">
+	<object class="AudioFile" id="{a12d3a85-23c3-4330-9f4f-e0e951c60e52}">
 		<property name="assetPath">
-			<value>Turret death.wav</value>
+			<value>Robot beep boop.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.1061904761904762</value>
+			<value>0.54480725623582771</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{3ee9eba8-17be-40cd-afb4-6d8f76c5d966}</destination>
