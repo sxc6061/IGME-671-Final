@@ -65,6 +65,9 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{a1a1467c-bdc3-40a4-a965-8c0b346bdc80}">
+		<relationship name="modules">
+			<destination>{04e828a2-c81b-47dc-b832-b2bcd55292bb}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{e4406866-39b3-42c5-8817-605c74e3aca0}</destination>
 		</relationship>
@@ -72,6 +75,7 @@
 	<object class="Timeline" id="{23b90905-cc69-47a8-b6d5-b306d7f4ff53}">
 		<relationship name="modules">
 			<destination>{2adb8318-8881-4014-bcdc-508814b8204e}</destination>
+			<destination>{04e828a2-c81b-47dc-b832-b2bcd55292bb}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{298669ad-db7c-4090-8047-bc0bbe379b56}">
@@ -92,11 +96,8 @@
 	</object>
 	<object class="MixerBusPanner" id="{7b8dfa27-fe7a-46ee-a799-bbd9cad25305}" />
 	<object class="MultiSound" id="{2adb8318-8881-4014-bcdc-508814b8204e}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
-		<property name="looping">
-			<value>true</value>
+		<property name="length">
+			<value>0.95000000000000007</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
@@ -107,6 +108,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{64045c13-047b-4f64-a3e0-59278f482541}">
+		<property name="volume">
+			<value>-14.5</value>
+		</property>
 		<property name="name">
 			<value>Robot</value>
 		</property>
@@ -120,7 +124,18 @@
 			<destination>{298669ad-db7c-4090-8047-bc0bbe379b56}</destination>
 		</relationship>
 	</object>
+	<object class="SingleSound" id="{04e828a2-c81b-47dc-b832-b2bcd55292bb}">
+		<property name="length">
+			<value>1.2297732426303856</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{f0b73ec5-f60e-44cf-8ee3-f67e1887b94a}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{e4406866-39b3-42c5-8817-605c74e3aca0}">
+		<property name="volume">
+			<value>-10</value>
+		</property>
 		<property name="name">
 			<value>Game Over</value>
 		</property>

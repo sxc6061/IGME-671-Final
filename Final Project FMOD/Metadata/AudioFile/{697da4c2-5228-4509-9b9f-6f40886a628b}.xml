@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{596438af-7409-4860-99ad-c527fd4a1e00}">
+	<object class="AudioFile" id="{697da4c2-5228-4509-9b9f-6f40886a628b}">
 		<property name="assetPath">
 			<value>Player move.wav</value>
 		</property>
