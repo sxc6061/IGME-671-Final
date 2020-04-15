@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{316377d9-551a-4cde-90ee-89bb7a0cd573}">
+		<property name="volume">
+			<value>2.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{15c48e83-d88c-4f9a-b4a1-df8c80ca216e}</destination>
 		</relationship>
@@ -107,7 +110,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{e9df8593-8ef1-4f80-ab21-432ca7f1758b}">
 		<property name="volume">
-			<value>-7.5</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>Player move</value>

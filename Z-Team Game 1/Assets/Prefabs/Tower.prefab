@@ -213,9 +213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a58e72f842ec743912b9c8c7cb4f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSound: {fileID: 8300000, guid: 375d48329fa804e4b8e710138dd3b725, type: 3}
-  hitSound: {fileID: 8300000, guid: ee1dbdc0c676f334ab420c9416a77735, type: 3}
-  deathSound: {fileID: 8300000, guid: 07fa9a32d6b8bd2479c922edb78dd4d3, type: 3}
+  turretShoot: event:/SFX/Turret shoot
+  shootSpeed: 0.2
+  turretDamage: event:/SFX/Player damage
+  damageSpeed: 0.2
+  turretDeath: event:/SFX/Turret death
+  deathSpeed: 0.2
   healthBar: {fileID: 7346860533473782263}
   expBar: {fileID: 2161258118401831309}
 --- !u!208 &1616226745830793264

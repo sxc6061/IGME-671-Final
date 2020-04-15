@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ZBuck : MonoBehaviour
 {
+    [FMODUnity.EventRef]
+    public string pickUp;
+    public float pickupSpeed;
+
     private enum ZBuckState { Entering, Standing, Exiting, Dead }
     private const float ENTER_TIME = 0.5f;
     private const float EXIT_TIME = 0.5f;
@@ -77,6 +81,7 @@ public class ZBuck : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, player.transform.position, timer);
                 if (timer > 1)
                 {
+                    FMODUnity.RuntimeManager.PlayOneShot(pickUp);
                     player.AddZBucks(value);
                     GameManager.Instance.RemoveZBuck(Index);
                     state = ZBuckState.Dead;

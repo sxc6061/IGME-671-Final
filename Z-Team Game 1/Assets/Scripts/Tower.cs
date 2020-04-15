@@ -13,16 +13,15 @@ public class Tower : Targetable
     }
 
     // Audio members, properties and constants
-    private AudioSource audioSource;
-    public AudioClip shootSound;
-    public AudioClip hitSound;
-    public AudioClip deathSound;
-    private const float SHOOT_PITCH = 0.6f;
-    private const float SHOOT_VOLUME = 0.05f;
-    private const float HIT_PITCH = 0.6f;
-    private const float HIT_VOLUME = 0.2f;
-    private const float DEATH_PITCH = 1.0f;
-    private const float DEATH_VOLUME = 0.2f;
+    [FMODUnity.EventRef]
+    public string turretShoot;
+    public float shootSpeed;
+    [FMODUnity.EventRef]
+    public string turretDamage;
+    public float damageSpeed;
+    [FMODUnity.EventRef]
+    public string turretDeath;
+    public float deathSpeed;
 
     //Constants
     public static readonly float SEARCH_RADIUS_SQRT = Mathf.Sqrt(SEARCH_RADIUS);
@@ -61,7 +60,6 @@ public class Tower : Targetable
         overlapSphereCols = new Collider[30];
         target = null;
         Level = 0;
-        audioSource = GetComponent<AudioSource>();
 
         //Find children
         spriteObj = transform.Find("Sprite").GetComponent<SpriteRenderer>();
@@ -225,12 +223,14 @@ public class Tower : Targetable
     /// <param name="damageAmount">The amount of damage to apply</param>
     private void TakeDamage(ushort damageAmount)
     {
+        SetHealth(health - damageAmount);
         if (!GameManager.Instance.muteSFX)
         {
-            audioSource.pitch = HIT_PITCH;
-            audioSource.PlayOneShot(hitSound, HIT_VOLUME * GameManager.Instance.sfxVolume);
+            if (health > 0)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(turretDamage);
+            }
         }
-        SetHealth(health - damageAmount);
     }
 
     /// <summary>
@@ -248,8 +248,7 @@ public class Tower : Targetable
             health = 0;
             if (!GameManager.Instance.muteSFX)
             {
-                audioSource.pitch = DEATH_PITCH;
-                audioSource.PlayOneShot(deathSound, DEATH_VOLUME * GameManager.Instance.sfxVolume);
+                FMODUnity.RuntimeManager.PlayOneShot(turretDeath);
             }
             currentState = TowerState.Dying;
         }
@@ -326,8 +325,7 @@ public class Tower : Targetable
 
             if (!GameManager.Instance.muteSFX)
             {
-                audioSource.pitch = SHOOT_PITCH;
-                audioSource.PlayOneShot(shootSound, SHOOT_VOLUME * GameManager.Instance.sfxVolume);
+                FMODUnity.RuntimeManager.PlayOneShot(turretShoot);
             }
 
             //Give Damage

@@ -104,7 +104,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{5da6ac3e-3444-4842-b1d0-77aec3b50209}">
 		<property name="volume">
-			<value>-16.5</value>
+			<value>-8.5</value>
 		</property>
 		<property name="name">
 			<value>Turret death</value>
