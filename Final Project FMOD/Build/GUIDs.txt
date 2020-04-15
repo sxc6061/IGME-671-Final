@@ -1,0 +1,8 @@
+{fd0880cb-5e6d-4a2c-abc9-81be683c3213} bank:/Master
+{6515a01f-2f16-066e-2d80-0b4099cf348b} bank:/Master.strings
+{0ac642d2-e64a-4939-be36-a07aaee173d7} bus:/
+{5acf8a85-0c8a-4f8f-bcf3-7531732eb8ea} bus:/Reverb
+{c748b052-347c-4006-bcd4-5ab91fad45d6} event:/Dialog
+{fe366eaa-c650-46d3-bf65-3410e4f7f7af} event:/Interface
+{090becc1-c1de-4de4-b7e1-b33d003e548a} event:/Music
+{5658067c-3e1b-46d8-8262-ecf7cb21adf6} event:/SFX
