@@ -20,6 +20,10 @@ public class Player : Targetable
     public float moveSpeed;
     private bool playerMoving;
 
+    [FMODUnity.EventRef]
+    public string playerDamage;
+    public float damageSpeed;
+
     private AudioSource audioSource;
     public AudioSource moveSoundSource;
     private const float MOVE_VOLUME = 0.1f;
@@ -290,8 +294,7 @@ public class Player : Targetable
 
         if (!GameManager.Instance.muteSFX)
         {
-            audioSource.pitch = HIT_PITCH;
-            audioSource.PlayOneShot(hitSound, HIT_VOLUME * GameManager.Instance.sfxVolume);
+            FMODUnity.RuntimeManager.PlayOneShot(playerDamage);
         }
         
         SetHealth(newHealth);

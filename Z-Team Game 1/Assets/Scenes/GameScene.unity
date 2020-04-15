@@ -7786,6 +7786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMove: event:/SFX/Player move
   moveSpeed: 0.15
+  playerDamage: event:/SFX/Player damage
+  damageSpeed: 0.2
   moveSoundSource: {fileID: 5361069018358727992}
   hitSound: {fileID: 0}
   deathSound: {fileID: 0}
