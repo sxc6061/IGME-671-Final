@@ -50,10 +50,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be837d581612094e9ac6d9252d18198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSoundSource: {fileID: 2088603393245397823}
-  hitSound: {fileID: 8300000, guid: ee1dbdc0c676f334ab420c9416a77735, type: 3}
-  deathSound: {fileID: 8300000, guid: 07fa9a32d6b8bd2479c922edb78dd4d3, type: 3}
-  placeTurretSound: {fileID: 8300000, guid: e097a707f7fa4f440b0281fdee152022, type: 3}
+  playerMove: 
+  moveSpeed: 0
+  moveSoundSource: {fileID: 0}
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  placeTurretSound: {fileID: 0}
+  turretCostMessagesObj: {fileID: 0}
+  turretCostDisplay: {fileID: 0}
   healthBar: {fileID: 0}
   zBucksCounter: {fileID: 0}
 --- !u!54 &4970661294587057182
@@ -108,7 +112,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596230991040306816}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

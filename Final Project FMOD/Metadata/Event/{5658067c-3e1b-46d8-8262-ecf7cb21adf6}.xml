@@ -96,7 +96,7 @@
 			<value>0.10000000000000001</value>
 		</property>
 		<property name="volume">
-			<value>-13.5</value>
+			<value>-24.5</value>
 		</property>
 		<property name="playCount">
 			<value>20</value>
@@ -106,6 +106,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e9df8593-8ef1-4f80-ab21-432ca7f1758b}">
+		<property name="volume">
+			<value>-7.5</value>
+		</property>
 		<property name="name">
 			<value>Player move</value>
 		</property>

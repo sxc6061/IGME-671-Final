@@ -15,6 +15,11 @@ public class Player : Targetable
     public const short ZBUCK_COLLECTION_RADIUS = 50;
 
     // Audio members, properties and constants
+    [FMODUnity.EventRef]
+    public string playerMove;
+    public float moveSpeed;
+    private bool playerMoving;
+
     private AudioSource audioSource;
     public AudioSource moveSoundSource;
     private const float MOVE_VOLUME = 0.1f;
@@ -27,12 +32,14 @@ public class Player : Targetable
     public AudioClip placeTurretSound;
     private const float PLACE_TURRET_PITCH = 1.0f;
     private const float PLACE_TURRET_VOLUME = 0.3f;
+    
 
     private const float MOVE_SPEED = 30.0f;
     private const float ROTATION_SPEED = 10.0f;
     private const int MAX_HEALTH = 10;
     private static readonly ushort[] TOWER_UPGRADE_PRICES = { 5, 15, 30 };
     private const ushort BASE_TOWER_PRICE = 5;
+    
 
     // Turret Cost UI Overlays
     public GameObject turretCostMessagesObj;
@@ -87,6 +94,7 @@ public class Player : Targetable
     /// </summary>
     public void Init()
     {
+        InvokeRepeating("CallPlayerMove", 0, moveSpeed);
         gameObject.SetActive(true);
 
         moveSoundSource.volume = 0.05f;
@@ -225,6 +233,7 @@ public class Player : Targetable
     {
         if (moveDirection != Vector3.zero)
         {
+            playerMoving = true;
             if (!GameManager.Instance.muteSFX)
             {
                 if (!moveSoundSource.isPlaying)
@@ -252,19 +261,23 @@ public class Player : Targetable
 
             CheckBounds();
         }
-        else if (moveSoundSource.isPlaying)
+        else
         {
-            LeanTween.value(gameObject, (float vol) =>
-            {
-                moveSoundSource.volume = vol * GameManager.Instance.sfxVolume;
-            },
-             moveSoundSource.volume,
-             0.05f,
-             0.3f).setOnComplete(() =>
-             {
-                 moveSoundSource.Pause();
-             });
+            playerMoving = false;
         }
+    }
+
+    public void CallPlayerMove()
+    {
+        if (playerMoving == true)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(playerMove);
+        }
+    }
+
+    public void OnDisable()
+    {
+        playerMoving = false;
     }
 
     /// <summary>
