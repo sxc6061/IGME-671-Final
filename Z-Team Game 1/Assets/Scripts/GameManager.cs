@@ -235,15 +235,16 @@ public class GameManager : Singleton<GameManager>
     public void ToggleMuteMusic(Toggle e)
     {
         muteMusic = e.isOn;
-
-        if (!muteMusic && audioSource.isPlaying)
+        /*
+        if (!muteMusic && IsPlaying(menuMusic))
         {
-            audioSource.Pause();
+            //add music
         }
-        else if (muteMusic && !audioSource.isPlaying)
+        else if (muteMusic && !IsPlaying(menuMusic))
         {
-            audioSource.Play();
+            
         }
+        */
     }
 
     public void ToggleRadiusOption(Toggle e)
