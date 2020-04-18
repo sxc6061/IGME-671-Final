@@ -38,8 +38,15 @@ public class GameManager : Singleton<GameManager>
     public GameObject mainMenu;
 
     // Background music properties
-    public AudioSource audioSource;
-    public AudioClip mainMusic;
+    [FMODUnity.EventRef]
+    public string menuMusic;
+    public float mmSpeed;
+    [FMODUnity.EventRef]
+    public string ingameMusic;
+    public float igmSpeed;
+    [FMODUnity.EventRef]
+    public string gameoverMusic;
+    public float goSpeed;
 
     // Sound Toggle GameObject References
     public GameObject radiusToggleObj;
