@@ -50,8 +50,6 @@ public class GameManager : Singleton<GameManager>
 
     // Sound Toggle GameObject References
     public GameObject radiusToggleObj;
-    public GameObject musicToggleObj;
-    public GameObject effectsToggleObj;
 
     // DeathScreen related properties
     public GameObject deathScreen;
@@ -92,8 +90,6 @@ public class GameManager : Singleton<GameManager>
         zBuckets = new List<ZBuck[]>();
         mainMenu.SetActive(true);
         radiusToggleObj.SetActive(true);
-        effectsToggleObj.SetActive(true);
-        musicToggleObj.SetActive(true);
     }
 
     // Start is called before the first frame update
@@ -157,8 +153,6 @@ public class GameManager : Singleton<GameManager>
         CurrentState = GameState.Paused;
         pauseMenu.SetActive(true);
         radiusToggleObj.SetActive(true);
-        musicToggleObj.SetActive(true);
-        effectsToggleObj.SetActive(true);
     }
 
     /// <summary>
@@ -177,8 +171,6 @@ public class GameManager : Singleton<GameManager>
         CurrentState = GameState.Ended;
         deathScreen.SetActive(true);
         radiusToggleObj.SetActive(true);
-        musicToggleObj.SetActive(true);
-        effectsToggleObj.SetActive(true);
         deathTimeDisplay.text = TimeSpan.FromSeconds(robotManager.TotalTime).ToString("mm':'ss'.'ff");
         killCountDisplay.text = killCount.ToString();
     }
@@ -229,35 +221,9 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    /// <summary>
-    /// Sets the MuteMusic bool when the Music toggle is changed
-    /// </summary>
-    public void ToggleMuteMusic(Toggle e)
-    {
-        muteMusic = e.isOn;
-        /*
-        if (!muteMusic && IsPlaying(menuMusic))
-        {
-            //add music
-        }
-        else if (muteMusic && !IsPlaying(menuMusic))
-        {
-            
-        }
-        */
-    }
-
     public void ToggleRadiusOption(Toggle e)
     {
         RadiusOption = e.isOn;
-    }
-
-    /// <summary>
-    /// Sets the MuteEffects bool when the Effects toggle is changed
-    /// </summary>
-    public void ToggleMuteSFX(Toggle e)
-    {
-        muteSFX = !e.isOn;
     }
 
     /// <summary>

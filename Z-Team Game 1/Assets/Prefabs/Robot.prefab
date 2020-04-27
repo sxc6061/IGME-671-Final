@@ -155,6 +155,8 @@ MonoBehaviour:
   edSpeed: 0.2
   enemyDeathSound: event:/SFX/Enemy death
   eDeathSpeed: 0.2
+  robotSound: event:/Dialog/Robot
+  robotSoundSpeed: 0.1
 --- !u!54 &1859810012433569774
 Rigidbody:
   m_ObjectHideFlags: 0

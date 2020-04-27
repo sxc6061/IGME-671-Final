@@ -18,13 +18,13 @@ public class Robot : Targetable
     public Targetable Target { get; set; }
 
     // Audio members, properties and constants
-        [FMODUnity.EventRef]
-        public string enemyDamage;
-        public float edSpeed;
-        [FMODUnity.EventRef]
-        public string enemyDeathSound;
-        public float eDeathSpeed;
-    
+    [FMODUnity.EventRef]
+    public string enemyDamage;
+    public float edSpeed;
+    [FMODUnity.EventRef]
+    public string enemyDeathSound;
+    public float eDeathSpeed;
+
     //Consts
     private const float SEARCH_TIMER_MAX = 0.5f;
     private const float ATTACK_TIMER_MAX = 2f;
@@ -239,14 +239,15 @@ public class Robot : Targetable
         health -= damageAmount;
         if (health < 1)
         {
-            currentState = RobotState.Dying; //TODO: death animations?
-            if (!GameManager.Instance.muteSFX)
-            {
-                
-            }
+            currentState = RobotState.Dying; //TODO: death animations?s
             GameManager.Instance.IncrementKillCount();
             RobotManager.DecrementRobotCount(Index);
             gameObject.SetActive(false);
+            FMODUnity.RuntimeManager.PlayOneShot(enemyDeathSound);
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(enemyDamage);
         }
     }
 
