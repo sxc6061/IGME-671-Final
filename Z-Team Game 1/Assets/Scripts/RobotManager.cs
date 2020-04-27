@@ -21,6 +21,11 @@ class RobotManager
 	private uint maxToSpawnPerFrame;
 	private int spawnAmount;
 
+	//audio
+	[FMODUnity.EventRef]
+    public string robotSound;
+    public float robotSoundSpeed;
+
 	//Timers
 	private const float ADD_PER_FRAME_MAX = 30; //every N seconds allow more robots to spawn per frame
 	private float addPerFrameTimer;

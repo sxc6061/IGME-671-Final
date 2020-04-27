@@ -28,6 +28,9 @@ public class Player : Targetable
     [FMODUnity.EventRef]
     public string placeTurret;
     public float placeSpeed;
+    [FMODUnity.EventRef]
+    public string lowHealthSound;
+    public float lhSpeed;
 
     private const float MOVE_SPEED = 30.0f;
     private const float ROTATION_SPEED = 10.0f;
@@ -126,7 +129,7 @@ public class Player : Targetable
                 {
                     //Update our tower's ghost on whether it can be placed or not
                     UpdateTowerGhost();
-
+                
                     //Check if we are hovering over a tower
                     Tower t = null;
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -214,6 +217,7 @@ public class Player : Targetable
         if (currentState == PlayerState.Alive)
         {
             Move();
+            
         }
     }
 
@@ -430,6 +434,14 @@ public class Player : Targetable
     {
         zBucksCounter.text = zBucks.ToString();
     }
+
+    public void LowHealthCheck(){
+        //check for low health
+        if(health < 3){
+            FMODUnity.RuntimeManager.PlayOneShot(lowHealthSound);
+        }
+    }
+
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {

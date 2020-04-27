@@ -89,12 +89,27 @@
 	</object>
 	<object class="MixerBusPanner" id="{7b8dfa27-fe7a-46ee-a799-bbd9cad25305}" />
 	<object class="MultiSound" id="{2adb8318-8881-4014-bcdc-508814b8204e}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="isAsync">
+			<value>true</value>
+		</property>
 		<property name="length">
 			<value>0.95000000000000007</value>
+		</property>
+		<property name="delayType">
+			<value>0</value>
+		</property>
+		<property name="maximumTimeDelay">
+			<value>120</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{2174e62c-0f32-41ea-a16a-23e1ffa26a61}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{4b928bc6-6213-4137-b36d-77aa8e8e289d}</destination>
 			<destination>{4337a7a1-5243-4ace-ab80-798d93716929}</destination>
@@ -102,7 +117,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{64045c13-047b-4f64-a3e0-59278f482541}">
 		<property name="volume">
-			<value>-14.5</value>
+			<value>-13.5</value>
 		</property>
 		<property name="name">
 			<value>Robot</value>
@@ -124,6 +139,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{6964cbb7-239d-4407-91e0-471b1489a48a}" />
 	<object class="MixerBusFader" id="{dbe8aa75-9e55-4323-8f5f-1672d7268ea7}" />
+	<object class="RandomizerModulator" id="{2174e62c-0f32-41ea-a16a-23e1ffa26a61}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>4.16666698</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{4b928bc6-6213-4137-b36d-77aa8e8e289d}">
 		<relationship name="audioFile">
 			<destination>{a12d3a85-23c3-4330-9f4f-e0e951c60e52}</destination>

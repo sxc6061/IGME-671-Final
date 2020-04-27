@@ -18,11 +18,13 @@ public class Robot : Targetable
     public Targetable Target { get; set; }
 
     // Audio members, properties and constants
-    private AudioSource audioSource;
-    public AudioClip deathSound;
-    private const float DEATH_PITCH = 1.0f;
-    private const float DEATH_VOLUME = 0.2f;
-
+        [FMODUnity.EventRef]
+        public string enemyDamage;
+        public float edSpeed;
+        [FMODUnity.EventRef]
+        public string enemyDeathSound;
+        public float eDeathSpeed;
+    
     //Consts
     private const float SEARCH_TIMER_MAX = 0.5f;
     private const float ATTACK_TIMER_MAX = 2f;
@@ -51,7 +53,6 @@ public class Robot : Targetable
     {
         overlapSphereCols = new Collider[MAX_TOWERS_TO_SEARCH];
         agent = GetComponent<NavMeshAgent>();
-        audioSource = GetComponent<AudioSource>();
         hitboxObj = transform.Find("Hitbox").gameObject;
         IsMoveable = true;
         gameObject.SetActive(false);
@@ -241,8 +242,7 @@ public class Robot : Targetable
             currentState = RobotState.Dying; //TODO: death animations?
             if (!GameManager.Instance.muteSFX)
             {
-                audioSource.pitch = DEATH_PITCH;
-                audioSource.PlayOneShot(deathSound, DEATH_VOLUME * GameManager.Instance.sfxVolume);
+                
             }
             GameManager.Instance.IncrementKillCount();
             RobotManager.DecrementRobotCount(Index);
