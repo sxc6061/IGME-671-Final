@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{a12d3a85-23c3-4330-9f4f-e0e951c60e52}">
 		<property name="assetPath">
-			<value>Robot beep boop.wav</value>
+			<value>Dialog/Robot beep boop.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

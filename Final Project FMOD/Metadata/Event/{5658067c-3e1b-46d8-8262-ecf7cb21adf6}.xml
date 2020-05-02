@@ -32,7 +32,7 @@
 			<destination>{93fa9e2c-3897-4f48-8d29-81743a5a39fb}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{fd0880cb-5e6d-4a2c-abc9-81be683c3213}</destination>
+			<destination>{5c8ad888-1170-4afe-b8ca-7b5dcf7bdd35}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{2b43c4cf-1ddd-478b-9a10-93ac061dac4f}">
@@ -92,6 +92,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{ab2c4c2f-cf82-4926-9761-1674d7676e4e}" />
 	<object class="SingleSound" id="{bfeb3915-93b7-4591-9ad3-66208289f3a1}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="triggerProbability">
+			<value>79.5</value>
+		</property>
 		<property name="isAsync">
 			<value>true</value>
 		</property>
@@ -138,6 +144,9 @@
 	<object class="RandomizerModulator" id="{c8eeb7f8-605a-4f3e-9279-1fad45071138}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>10.416666</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{df31a4da-7db3-432f-b061-1642bf7b4cd7}">
