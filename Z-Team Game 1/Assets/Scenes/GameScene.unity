@@ -553,12 +553,12 @@ MonoBehaviour:
   boundsY: 48.3
   pauseMenu: {fileID: 407217064}
   mainMenu: {fileID: 718361366}
-  menuMusic: 
-  mmSpeed: 0
-  ingameMusic: 
-  igmSpeed: 0
-  gameoverMusic: 
-  goSpeed: 0
+  menuMusic: event:/Music/Menu
+  mmSpeed: 0.3
+  ingameMusic: event:/Music/In-Game
+  igmSpeed: 0.3
+  gameoverMusic: event:/Music/Game End
+  goSpeed: 0.3
   radiusToggleObj: {fileID: 732246211}
   deathScreen: {fileID: 437083668}
   deathTimeDisplay: {fileID: 1675328504}

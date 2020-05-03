@@ -40,13 +40,15 @@ public class GameManager : Singleton<GameManager>
     // Background music properties
     [FMODUnity.EventRef]
     public string menuMusic;
-    public float mmSpeed;
+    FMOD.Studio.EventInstance menu;
+
     [FMODUnity.EventRef]
     public string ingameMusic;
-    public float igmSpeed;
+    FMOD.Studio.EventInstance ingame;
+
     [FMODUnity.EventRef]
     public string gameoverMusic;
-    public float goSpeed;
+    FMOD.Studio.EventInstance gameover;
 
     // Sound Toggle GameObject References
     public GameObject radiusToggleObj;
@@ -90,6 +92,7 @@ public class GameManager : Singleton<GameManager>
         zBuckets = new List<ZBuck[]>();
         mainMenu.SetActive(true);
         radiusToggleObj.SetActive(true);
+
     }
 
     // Start is called before the first frame update
@@ -97,6 +100,10 @@ public class GameManager : Singleton<GameManager>
     {
         //Initialize object pools
         ResetGame();
+        menu = FMODUnity.RuntimeManager.CreateInstance(menuMusic);
+        ingame = FMODUnity.RuntimeManager.CreateInstance(ingameMusic);
+        gameover = FMODUnity.RuntimeManager.CreateInstance(gameoverMusic);
+        menu.start();
     }
 
     /// <summary>
@@ -134,6 +141,8 @@ public class GameManager : Singleton<GameManager>
         currIndex = 0;
         activeBucks = 0;
         CreateZBucket();
+        gameover.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menu.start();
     }
 
     /// <summary>
@@ -143,6 +152,8 @@ public class GameManager : Singleton<GameManager>
     {
         ResetGame();
         CurrentState = GameState.Playing;
+        menu.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        ingame.start();
     }
 
     /// <summary>
@@ -153,6 +164,8 @@ public class GameManager : Singleton<GameManager>
         CurrentState = GameState.Paused;
         pauseMenu.SetActive(true);
         radiusToggleObj.SetActive(true);
+        ingame.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        menu.start();
     }
 
     /// <summary>
@@ -161,6 +174,8 @@ public class GameManager : Singleton<GameManager>
     public void ResumeGame()
     {
         CurrentState = GameState.Playing;
+        ingame.start();
+        menu.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     /// <summary>
@@ -173,6 +188,8 @@ public class GameManager : Singleton<GameManager>
         radiusToggleObj.SetActive(true);
         deathTimeDisplay.text = TimeSpan.FromSeconds(robotManager.TotalTime).ToString("mm':'ss'.'ff");
         killCountDisplay.text = killCount.ToString();
+        ingame.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        gameover.start();
     }
 
     /// <summary>
@@ -189,9 +206,11 @@ public class GameManager : Singleton<GameManager>
         switch (CurrentState)
         {
             case GameState.Starting:
+                
                 break;
 
             case GameState.Playing:
+
                 robotManager.Update();
 
                 timerGUI.text = $"<mspace=0.6em>{TimeSpan.FromSeconds(robotManager.TotalTime).ToString("mm':'ss'.'ff")}</mspace>";
@@ -315,6 +334,12 @@ public class GameManager : Singleton<GameManager>
         {
             t.SetBuildMode(buildOn);
         }
+    }
+
+    void StopAllPlayerEvents()
+    {
+        FMOD.Studio.Bus playerBus = FMODUnity.RuntimeManager.GetBus("bus:/player");
+        playerBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
 #if UNITY_EDITOR
