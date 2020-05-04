@@ -553,12 +553,7 @@ MonoBehaviour:
   boundsY: 48.3
   pauseMenu: {fileID: 407217064}
   mainMenu: {fileID: 718361366}
-  menuMusic: event:/Music/Menu
-  mmSpeed: 0.3
   ingameMusic: event:/Music/In-Game
-  igmSpeed: 0.3
-  gameoverMusic: event:/Music/Game End
-  goSpeed: 0.3
   radiusToggleObj: {fileID: 732246211}
   deathScreen: {fileID: 437083668}
   deathTimeDisplay: {fileID: 1675328504}
@@ -2218,6 +2213,7 @@ GameObject:
   - component: {fileID: 407217065}
   - component: {fileID: 407217067}
   - component: {fileID: 407217066}
+  - component: {fileID: 407217068}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -2284,6 +2280,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407217064}
   m_CullTransparentMesh: 0
+--- !u!114 &407217068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407217064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Menu
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &437083668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2314,8 @@ GameObject:
   - component: {fileID: 437083669}
   - component: {fileID: 437083671}
   - component: {fileID: 437083670}
+  - component: {fileID: 437083672}
+  - component: {fileID: 437083673}
   m_Layer: 5
   m_Name: DeathScreen
   m_TagString: Untagged
@@ -2362,6 +2383,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437083668}
   m_CullTransparentMesh: 0
+--- !u!114 &437083672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437083668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Game End
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &437083673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437083668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Dialog/Game Over
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &439101560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,6 +3462,7 @@ GameObject:
   - component: {fileID: 718361367}
   - component: {fileID: 718361369}
   - component: {fileID: 718361368}
+  - component: {fileID: 718361370}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -3460,6 +3528,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718361366}
   m_CullTransparentMesh: 0
+--- !u!114 &718361370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718361366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/Menu
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &732246211
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,7 +6574,6 @@ GameObject:
   - component: {fileID: 2840658364635222234}
   - component: {fileID: 3286171642293790412}
   - component: {fileID: 8321293995698195617}
-  - component: {fileID: 1763088604}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6491,19 +6581,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1763088604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763088603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: -1
 --- !u!1 &1841971805
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,7 +7238,6 @@ MonoBehaviour:
   placeTurret: event:/SFX/Turret place
   placeSpeed: 0.2
   lowHealthSound: event:/SFX/Low Health
-  lhSpeed: 0
   turretCostMessagesObj: {fileID: 1467670507}
   turretCostDisplay: {fileID: 1202180039}
   healthBar: {fileID: 278798436}

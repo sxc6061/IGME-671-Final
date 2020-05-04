@@ -30,7 +30,7 @@ public class Player : Targetable
     public float placeSpeed;
     [FMODUnity.EventRef]
     public string lowHealthSound;
-    public float lhSpeed;
+    FMOD.Studio.EventInstance lowHealth;
 
     private const float MOVE_SPEED = 30.0f;
     private const float ROTATION_SPEED = 10.0f;
@@ -108,6 +108,7 @@ public class Player : Targetable
         zBucks = currTowerPrice;
         UpdateZBucksDisplay();
         lastHighlightedTower = null;
+        lowHealth = FMODUnity.RuntimeManager.CreateInstance(lowHealthSound);
     }
 
     // Update is called once per frame
@@ -283,6 +284,7 @@ public class Player : Targetable
 
         if (health < 1)
         {
+            lowHealth.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             health = 0;
             if (!GameManager.Instance.muteSFX)
             {
@@ -290,6 +292,10 @@ public class Player : Targetable
                 FMODUnity.RuntimeManager.PlayOneShot(playerDeath);
             }
             currentState = PlayerState.Dying;
+        }
+        else if (health < 3)
+        {
+            lowHealth.start();
         }
     }
 
@@ -433,13 +439,6 @@ public class Player : Targetable
     public void UpdateZBucksDisplay()
     {
         zBucksCounter.text = zBucks.ToString();
-    }
-
-    public void LowHealthCheck(){
-        //check for low health
-        if(health < 3){
-            FMODUnity.RuntimeManager.PlayOneShot(lowHealthSound);
-        }
     }
 
 #if UNITY_EDITOR

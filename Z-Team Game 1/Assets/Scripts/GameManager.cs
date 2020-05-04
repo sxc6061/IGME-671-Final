@@ -39,16 +39,8 @@ public class GameManager : Singleton<GameManager>
 
     // Background music properties
     [FMODUnity.EventRef]
-    public string menuMusic;
-    FMOD.Studio.EventInstance menu;
-
-    [FMODUnity.EventRef]
     public string ingameMusic;
     FMOD.Studio.EventInstance ingame;
-
-    [FMODUnity.EventRef]
-    public string gameoverMusic;
-    FMOD.Studio.EventInstance gameover;
 
     // Sound Toggle GameObject References
     public GameObject radiusToggleObj;
@@ -92,7 +84,6 @@ public class GameManager : Singleton<GameManager>
         zBuckets = new List<ZBuck[]>();
         mainMenu.SetActive(true);
         radiusToggleObj.SetActive(true);
-
     }
 
     // Start is called before the first frame update
@@ -100,10 +91,7 @@ public class GameManager : Singleton<GameManager>
     {
         //Initialize object pools
         ResetGame();
-        menu = FMODUnity.RuntimeManager.CreateInstance(menuMusic);
         ingame = FMODUnity.RuntimeManager.CreateInstance(ingameMusic);
-        gameover = FMODUnity.RuntimeManager.CreateInstance(gameoverMusic);
-        menu.start();
     }
 
     /// <summary>
@@ -141,8 +129,6 @@ public class GameManager : Singleton<GameManager>
         currIndex = 0;
         activeBucks = 0;
         CreateZBucket();
-        gameover.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        menu.start();
     }
 
     /// <summary>
@@ -152,7 +138,6 @@ public class GameManager : Singleton<GameManager>
     {
         ResetGame();
         CurrentState = GameState.Playing;
-        menu.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         ingame.start();
     }
 
@@ -165,7 +150,6 @@ public class GameManager : Singleton<GameManager>
         pauseMenu.SetActive(true);
         radiusToggleObj.SetActive(true);
         ingame.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        menu.start();
     }
 
     /// <summary>
@@ -175,7 +159,7 @@ public class GameManager : Singleton<GameManager>
     {
         CurrentState = GameState.Playing;
         ingame.start();
-        menu.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //Debug.Log("ingame start");
     }
 
     /// <summary>
@@ -189,7 +173,6 @@ public class GameManager : Singleton<GameManager>
         deathTimeDisplay.text = TimeSpan.FromSeconds(robotManager.TotalTime).ToString("mm':'ss'.'ff");
         killCountDisplay.text = killCount.ToString();
         ingame.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        gameover.start();
     }
 
     /// <summary>

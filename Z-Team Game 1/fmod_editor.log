@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000028BBEAC6D38 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000272125BA708 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -22,41 +22,27 @@
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 33280
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9216
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000D4BF9FF3CC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF9CCFB8630
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF9CCFB8600
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF9CCFB8700
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF9CCFB87C0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000028BC08F7848
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Player damage', format=2, channels=2, frequency=48000, lengthbytes=2848, lengthpcm=12911, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.232465.
-[LOG] SoundI::release                          :  (0000028BA89BF4B8)
-[LOG] SoundI::release                          :     Game Over Music (0000028B93F85598)
-[LOG] SoundI::release                          :  (0000028BB3A522E8)
-[LOG] SoundI::release                          :     Button pressed (0000028B93E96B38)
-[LOG] SoundI::release                          :  (0000028BB3A52178)
-[LOG] SoundI::release                          :     Button hover (0000028B93E95FD8)
-[LOG] SoundI::release                          :  (0000028BA89BF1D8)
-[LOG] SoundI::release                          :     Menu Music (0000028B93F84898)
-[LOG] SoundI::release                          :  (0000028BA89BF798)
-[LOG] SoundI::release                          :     In-Game Music (0000028B93F853F8)
-[LOG] SoundI::release                          :  (0000028B864D1438)
-[LOG] SoundI::release                          :     Player damage (0000028BAB9602D8)
+[LOG] SoundI::release                          :  (000002721F35A618)
+[LOG] SoundI::release                          :     Button pressed (000002726793C088)
+[LOG] SoundI::release                          :  (00000272748E9598)
+[LOG] SoundI::release                          :     Button hover (000002726793C228)
+[LOG] SoundI::release                          :  (000002721F35ABD8)
+[LOG] SoundI::release                          :     Menu Music (000002726793BBA8)
+[LOG] SoundI::release                          :  (000002721F35B758)
+[LOG] SoundI::release                          :     In-Game Music (000002726793BEE8)
+[LOG] SoundI::release                          :  (000002721ECD92E8)
+[LOG] SoundI::release                          :     Player move (000002726793D748)
+[LOG] SoundI::release                          :  (000002721F35A4A8)
+[LOG] SoundI::release                          :     Player Low Health (000002726793AD08)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
